@@ -19,7 +19,7 @@ class PostAdapter(context: Context, res:Int, list: ArrayList<PostData>)
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         var row = convertView
         if (row == null) {
-            row = inf.inflate(R.layout.room_list_item, null)
+            row = inf.inflate(R.layout.post_list_item, null)
         }
 
         var postData = mList?.get(position)
