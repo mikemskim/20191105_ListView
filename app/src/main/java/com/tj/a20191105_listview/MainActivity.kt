@@ -29,9 +29,9 @@ class MainActivity : AppCompatActivity() {
         room1.floor = 1
 
         var room2 = RoomData()
+        room2.price = 28500
         room2.address = "마포구 서교동"
         room2.floor = 3
-        room2.price = 28500
 
         var room3 = RoomData()
         room3.price = 12000
