@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.TextView
 import com.tj.a20191105_listview.R
 import com.tj.a20191105_listview.data.PostData
 
@@ -20,6 +21,14 @@ class PostAdapter(context: Context, res:Int, list: ArrayList<PostData>)
         if (row == null) {
             row = inf.inflate(R.layout.room_list_item, null)
         }
+
+        var postData = mList?.get(position)
+
+        var titleTxt = row?.findViewById<TextView>(R.id.titleTxt)
+        var contentTxt = row?.findViewById<TextView>(R.id.contentTxt)
+
+        titleTxt?.text = postData?.title
+        contentTxt?.text = postData?.content
 
         return row!!
     }
