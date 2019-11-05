@@ -27,6 +27,6 @@ class RoomDataAdapter (context: Context, resource:Int, list:ArrayList<RoomData>)
         if (row == null) {
             row = inf?.inflate(R.layout.room_list_item, null)
         }
-
+        return row!!
     }
 }

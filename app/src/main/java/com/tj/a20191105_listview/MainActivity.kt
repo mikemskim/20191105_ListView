@@ -2,17 +2,24 @@ package com.tj.a20191105_listview
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.tj.a20191105_listview.adapters.RoomDataAdapter
 import com.tj.a20191105_listview.data.RoomData
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
     var roomList = ArrayList<RoomData>()
+    var roomAdapter:RoomDataAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         addRooms()
+
+        roomAdapter = RoomDataAdapter(this, R.layout.room_list_item, roomList)
+
+        roomListView.adapter = roomAdapter
     }
 
     fun addRooms() {
