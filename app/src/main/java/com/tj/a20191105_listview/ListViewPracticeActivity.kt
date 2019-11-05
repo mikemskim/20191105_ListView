@@ -2,17 +2,23 @@ package com.tj.a20191105_listview
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.tj.a20191105_listview.adapters.PostAdapter
 import com.tj.a20191105_listview.data.PostData
+import kotlinx.android.synthetic.main.activity_list_view_practice.*
 
 class ListViewPracticeActivity : AppCompatActivity() {
 
     var postList = ArrayList<PostData>()
+    var postAdapter:PostAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_view_practice)
 
         addPosts()
+
+        postAdapter = PostAdapter(this, R.layout.post_list_item, postList)
+        postListView.adapter = postAdapter
     }
 
     fun addPosts() {
